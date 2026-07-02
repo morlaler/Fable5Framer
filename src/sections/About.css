@@ -1,0 +1,75 @@
+.about {
+  background: var(--color-black);
+  padding-top: 8px;
+}
+
+.about-inner {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 200px;
+  padding-bottom: 160px;
+}
+
+.about-statement {
+  width: min(1180px, 78%);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15em;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+
+.about-word {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.about-logos {
+  padding-bottom: 140px;
+}
+
+.about-logo-card {
+  width: 420px;
+  height: 220px;
+  background: var(--color-dark);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-logo-card img {
+  height: 40px;
+  width: auto;
+}
+
+@media (max-width: 1199px) {
+  .about-statement {
+    font-size: 40px;
+    width: 86%;
+  }
+  .about-inner {
+    padding-top: 140px;
+    padding-bottom: 120px;
+  }
+  .about-logo-card {
+    width: 340px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 809px) {
+  .about-statement {
+    font-size: 28px;
+    width: 100%;
+  }
+  .about-inner {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  .about-logo-card {
+    width: 260px;
+    height: 140px;
+  }
+}

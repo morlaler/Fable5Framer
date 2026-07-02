@@ -1,0 +1,67 @@
+.contact-cta-wrap {
+  background: var(--color-black);
+  display: flex;
+  justify-content: center;
+  padding: 170px 24px 120px;
+}
+
+.contact-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: min(680px, 100%);
+  background: var(--color-green);
+  border-radius: 100px;
+  padding: 12px 12px 12px 32px;
+}
+
+.contact-cta-text {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  white-space: pre;
+}
+
+.contact-cta-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--color-white);
+  margin-left: 3px;
+  animation: cta-blink 1s steps(1) infinite;
+}
+
+@keyframes cta-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.contact-cta-btn {
+  background: #0a5c3c;
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  padding: 16px 28px;
+  border-radius: 100px;
+  transition: background 0.3s ease;
+}
+
+.contact-cta-btn:hover {
+  background: #084a30;
+}
+
+@media (max-width: 809px) {
+  .contact-cta-text {
+    font-size: 18px;
+  }
+  .contact-cta-btn {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}

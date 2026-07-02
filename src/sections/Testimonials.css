@@ -1,0 +1,151 @@
+.testimonials {
+  background: var(--color-black);
+  padding-bottom: 8px;
+}
+
+.testimonials-header {
+  padding-top: 40px;
+  padding-bottom: 90px;
+  padding-left: 64px;
+}
+
+.testimonials-viewport {
+  overflow: hidden;
+  width: 100%;
+  --t-card-w: 560px;
+  --t-gap: 56px;
+  --t-card-half: calc(var(--t-card-w) / 2);
+  --t-step: calc(var(--t-card-w) + var(--t-gap));
+  padding-bottom: 140px;
+}
+
+.testimonials-track {
+  display: flex;
+  align-items: stretch;
+  gap: var(--t-gap);
+  width: max-content;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.t-photo,
+.t-quote {
+  width: var(--t-card-w);
+  height: 660px;
+  border-radius: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.6s ease;
+  cursor: pointer;
+}
+
+.t-photo.is-active,
+.t-quote.is-active {
+  opacity: 1;
+}
+
+.t-photo img,
+.t-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t-quote {
+  background: var(--color-dark);
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-quote-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.t-quote-author img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.t-quote-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.t-quote-role {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+.t-quote-text {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.3em;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.t-dots {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-green);
+  padding: 12px 16px;
+  border-radius: 100px;
+}
+
+.t-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background 0.3s ease;
+}
+
+.t-dot.is-active {
+  background: var(--color-white);
+}
+
+@media (max-width: 1199px) {
+  .testimonials-viewport {
+    --t-card-w: 460px;
+  }
+  .t-photo,
+  .t-quote {
+    height: 560px;
+  }
+  .testimonials-header {
+    padding-left: var(--page-margin);
+  }
+}
+
+@media (max-width: 809px) {
+  .testimonials-viewport {
+    --t-card-w: 320px;
+    --t-gap: 24px;
+  }
+  .t-photo,
+  .t-quote {
+    height: 460px;
+  }
+  .t-quote {
+    padding: 24px;
+  }
+  .t-quote-text {
+    font-size: 19px;
+  }
+}

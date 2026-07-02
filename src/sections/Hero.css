@@ -1,0 +1,92 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  padding: 12px;
+  background: var(--color-black);
+}
+
+.hero-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  transform-origin: center top;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-dim {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  left: 48px;
+  bottom: 27%;
+  max-width: 620px;
+  z-index: 2;
+}
+
+.hero-headline {
+  color: var(--color-white);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2em;
+  letter-spacing: -0.9px;
+  text-align: justify;
+  margin-bottom: 32px;
+}
+
+.hero-cta {
+  padding: 16px 28px;
+  font-size: 17px;
+}
+
+.hero-watermark {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2%;
+  padding: 0 16px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-watermark-text {
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: rgba(35, 35, 35, 0.6);
+  mix-blend-mode: hard-light;
+}
+
+@media (max-width: 1199px) {
+  .hero-content {
+    left: 40px;
+    bottom: 30%;
+    max-width: 520px;
+  }
+  .hero-headline {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 809px) {
+  .hero-content {
+    left: 24px;
+    right: 24px;
+    bottom: 26%;
+  }
+  .hero-headline {
+    font-size: 20px;
+  }
+}
