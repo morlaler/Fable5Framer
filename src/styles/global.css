@@ -1,0 +1,285 @@
+/* ============ Design tokens ============ */
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #141414;
+  --color-green: #0f8054;
+  --color-yellow: #fbbc00;
+  --color-gray: #c9c9c9;
+  --color-muted: #7c7c7c;
+
+  --font-sans: 'Inter', 'Inter Placeholder', sans-serif;
+
+  --radius-card: 32px;
+  --radius-section: 48px;
+  --page-margin: 24px;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-framer: cubic-bezier(0.44, 0, 0.56, 1);
+}
+
+@font-face {
+  font-family: 'YUNGA';
+  src: url('/assets/fonts/yunga.woff2') format('woff2');
+  font-display: block;
+}
+@font-face {
+  font-family: 'Rechteck';
+  src: url('/assets/fonts/rechteck.woff2') format('woff2');
+  font-display: block;
+}
+@font-face {
+  font-family: 'ARK-ES';
+  src: url('/assets/fonts/ark-es.woff') format('woff');
+  font-display: block;
+}
+
+/* ============ Base ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ============ Typography scale (matches source presets) ============ */
+.t-display {
+  font-size: 144px;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -0.06em;
+  color: var(--color-white);
+}
+
+.t-h2 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: 0em;
+}
+
+.t-body-lg {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: -0.9px;
+}
+
+.t-bold {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+}
+
+.t-semibold {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2em;
+  letter-spacing: -0.04em;
+}
+
+.t-card-title {
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+
+.t-body {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+}
+
+.t-small {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2em;
+  letter-spacing: -0.04px;
+}
+
+.t-tag {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1em;
+  letter-spacing: -0.2px;
+}
+
+@media (max-width: 1199px) {
+  .t-display {
+    font-size: 99px;
+  }
+  .t-h2 {
+    font-size: 40px;
+  }
+  .t-body-lg {
+    font-size: 26px;
+  }
+  .t-bold,
+  .t-semibold {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 809px) {
+  .t-display {
+    font-size: 60px;
+  }
+  .t-body-lg {
+    font-size: 20px;
+  }
+  .t-bold,
+  .t-semibold {
+    font-size: 19px;
+  }
+}
+
+/* ============ Shared primitives ============ */
+.container {
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+}
+
+/* Pill button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.04px;
+  line-height: 1.2em;
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out-quart), background-color 0.3s var(--ease-out-quart),
+    color 0.3s var(--ease-out-quart);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn--green {
+  background: var(--color-green);
+}
+
+.btn--green:hover {
+  background: #0c6b46;
+}
+
+.btn--black {
+  background: var(--color-black);
+}
+
+.btn--black:hover {
+  background: var(--color-dark);
+}
+
+.btn--white {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Section label chip: (About Us) */
+.section-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.section-chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-dark);
+  border-radius: 100px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-white);
+  z-index: 1;
+}
+
+.section-chip svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

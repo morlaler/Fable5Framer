@@ -1,0 +1,28 @@
+.marquee {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: var(--marquee-gap);
+  padding-right: var(--marquee-gap);
+  flex-shrink: 0;
+  min-width: 100%;
+  animation: marquee-scroll linear infinite;
+  animation-duration: inherit;
+}
+
+.marquee-track--reverse {
+  animation-direction: reverse;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--marquee-gap)));
+  }
+}
